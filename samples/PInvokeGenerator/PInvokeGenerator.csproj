@@ -7,6 +7,7 @@
         <DebugType>full</DebugType>
         <DebugSymbols>true</DebugSymbols>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <StartupObject>PInvokeGenerator.Driver</StartupObject>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <Commandlineparameters>~/android-ndk-r9d/platforms/android-9/arch-x86/usr/include/SLES/OpenSLES_Platform.h  ~/android-ndk-r9d/platforms/android-9/arch-x86/usr/include/SLES/OpenSLES.h --out:OpenSLESInterop.cs --lib:OpenSLES</Commandlineparameters>

@@ -6,6 +6,7 @@
         <AssemblyName>CApiGenerator</AssemblyName>
         <DebugType>full</DebugType>
         <DebugSymbols>true</DebugSymbols>
+        <StartupObject>CApiGenerator.Driver</StartupObject>
     </PropertyGroup>
     <ItemGroup>
         <ProjectReference Include="../../NClang/NClang.csproj" />

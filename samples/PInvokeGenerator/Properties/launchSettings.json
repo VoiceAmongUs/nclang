@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "PInvokeGenerator": {
+      "commandName": "Project",
+      "commandLineArgs": "--lib:soundio --ns:SoundIOSharp $(SolutionDir)\\external\\libsoundio\\soundio\\soundio.h",
+      "workingDirectory": "C:\\Program Files\\LLVM\\bin"
+    }
+  }
+}
