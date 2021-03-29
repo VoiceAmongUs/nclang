@@ -291,7 +291,10 @@ namespace PInvokeGenerator
 				output.WriteLine ($"{type_scope} class Delegates");
 				output.WriteLine ("{");
 				foreach (var s in delegates)
-					output.WriteLine ("public " + s.DelegateDefinition + ";");
+				{
+					output.WriteLine("[UnmanagedFunctionPointer(CallingConvention.Cdecl)]");
+					output.WriteLine("public " + s.DelegateDefinition + ";");
+				}
 				output.WriteLine ("}");
 			}
 
@@ -445,7 +448,7 @@ namespace PInvokeGenerator
 			public override void Write (TextWriter w, string typeScope)
 			{
 				w.WriteLine ("\t// function {0} - {1} ({2}, {3})", Name, SourceFileName, Line, Column);
-				w.WriteLine ("\t[DllImport (LibraryName)]");
+				w.WriteLine ("\t[DllImport (LibraryName, CallingConvention=CallingConvention.Cdecl)]");
 				w.WriteLine ("\tinternal static extern {0} {1} ({2});", Return, Name, string.Join (", ", Args.Select (a => a.TypeDetails + a.Type + " " + (string.IsNullOrEmpty (a.Name) ? "_" + Array.IndexOf (Args, a) : '@' + a.Name))));
 			}
 		}
